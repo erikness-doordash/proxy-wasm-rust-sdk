@@ -497,7 +497,7 @@ impl Dispatcher {
             Some(id) => *id,
             None => {
                 // TODO: change back to a panic once underlying issue is fixed.
-                error!("on_grpc_receive_initial_metadata: invalid token_id");
+                error!("on_grpc_receive_trailing_metadata: invalid token_id");
                 return;
             }
         };
