@@ -16,6 +16,7 @@ use crate::hostcalls;
 use crate::traits::*;
 use crate::types::*;
 use hashbrown::HashMap;
+use log::error;
 use log::trace;
 use std::cell::{Cell, RefCell};
 
@@ -434,7 +435,7 @@ impl Dispatcher {
             Some(id) => *id,
             None => {
                 // TODO: change back to a panic once underlying issue is fixed.
-                trace!("on_grpc_receive_initial_metadata: invalid token_id");
+                error!("on_grpc_receive_initial_metadata: invalid token_id");
                 return;
             }
         };
@@ -496,7 +497,7 @@ impl Dispatcher {
             Some(id) => *id,
             None => {
                 // TODO: change back to a panic once underlying issue is fixed.
-                trace!("on_grpc_receive_initial_metadata: invalid token_id");
+                error!("on_grpc_receive_initial_metadata: invalid token_id");
                 return;
             }
         };
